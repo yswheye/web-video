@@ -121,12 +121,14 @@ class ExoVideoActivity : AppCompatActivity() {
                     video_container.isVisible = true
                     video_container.tag = id
 
-                    val dataSource = MediaSourceCreator(this).buildMediaSource(url.toUri())
-                    val player = SimpleExoPlayer.Builder(baseContext).build()
-                    video_view.player = player
-                    video_view.orientationOwner = orientationManager
-                    player.prepare(dataSource)
-                    player.playWhenReady = true
+                    runOnUiThread {
+                        val dataSource = MediaSourceCreator(this).buildMediaSource(url.toUri())
+                        val player = SimpleExoPlayer.Builder(baseContext).build()
+                        video_view.player = player
+                        video_view.orientationOwner = orientationManager
+                        player.prepare(dataSource)
+                        player.playWhenReady = true
+                    }
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }

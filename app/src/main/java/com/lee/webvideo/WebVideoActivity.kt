@@ -24,7 +24,7 @@ class WebVideoActivity : AppCompatActivity(), VideoWebViewOwner {
         web_view.settings.javaScriptEnabled = true
         web_view.webChromeClient = chromeClient
         web_view.webViewClient = CustomWebViewClient()
-        web_view.loadUrl("https://b23.tv/wBOJJr")
+        web_view.loadUrl("https://www.bilibili.com/video/BV1u34y1B7wE?spm_id_from=333.851.b_7265636f6d6d656e64.1")
     }
 
     override fun onDestroy() {

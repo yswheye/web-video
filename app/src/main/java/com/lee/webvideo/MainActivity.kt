@@ -10,6 +10,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        btn0.setOnClickListener {
+            startActivity(Intent(this, WebViewActivity::class.java))
+        }
         btn1.setOnClickListener {
             startActivity(Intent(this, WebVideoActivity::class.java))
         }
